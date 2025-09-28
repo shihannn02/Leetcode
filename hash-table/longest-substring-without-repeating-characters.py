@@ -6,7 +6,7 @@ class Solution:
         maxLen = 0
         while r<n:
             if s[r] in d:
-                l = max(l, s[r]+1)
+                l = max(l, d[s[r]]+1)
                 length = r-l+1
                 maxLen = (length, maxLen)
                 d[s[r]] = r
