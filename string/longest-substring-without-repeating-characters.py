@@ -8,7 +8,7 @@ class Solution:
             if s[r] in d:
                 l = max(l, d[s[r]]+1)
                 length = r-l+1
-                maxLen = (length, maxLen)
+                maxLen = max(length, maxLen)
                 d[s[r]] = r
                 r+=1
         return maxLen
