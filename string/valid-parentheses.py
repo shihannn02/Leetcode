@@ -4,7 +4,7 @@ class Solution:
         mapping = {')': '(', ']':'[', '}':'{'}
 
         for i in s:
-            if i not in mapping.values():
+            if i in mapping.values():
                 stack.append(i)
             else:
                 if not stack or stack[-1]!=mapping[i]:
