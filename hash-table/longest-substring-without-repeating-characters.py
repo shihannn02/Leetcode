@@ -1,14 +1,17 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        # abaca -> s[a]=0 left=0,s[b]=1, s[a]=2 left=1
-        shash = {}
-        left, sLen = 0,0
-        for right, char in enumerate(s):
-            if char in shash:
-                left = shash[char]+1
-            shash[char] = right
-            sLen = max(sLen, right - left + 1)
-        return sLen
+        d = {}
+        l,r = 0,0
+        n = len(s)
+        maxLen = 0
+        while r<n:
+            if s[r] in d:
+                l = max(l, s[r]+1)
+                length = r-l+1
+                maxLen = (length, maxLen)
+                d[s[r]] = r
+                r+=1
+        return maxLen
             
 
 
