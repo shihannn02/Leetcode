@@ -9,4 +9,5 @@ class Solution:
             else:
                 if not stack or stack[-1]!=mapping[i]:
                     return False
+                stack.pop()
         return not stack
